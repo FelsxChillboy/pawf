@@ -8,8 +8,8 @@
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Adilah Nazifah Salamah</h2>
-        <p>I'm <span class="typed" data-typed-items="Information Systems Student">Information Systems Student</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <h2>ahmad azarruddin</h2>
+        <p>I'm <span class="typed" data-typed-items="informatics engineering">Information engineering Student</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
     </section>

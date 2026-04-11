@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio - Adilah Nazifah Salamah</title>
-  <meta content="Portfolio of Adilah Nazifah Salamah - Information Systems Student" name="description">
-  <meta content="Adilah Nazifah Salamah, Information Systems">
+  <title>Portfolio - ahmad azarruddin</title>
+  <meta content="Portfolio of ahmad azarruddin - informatics engineering" name="description">
+  <meta content="ahmad azarruddin, Information Systems">
 
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -35,7 +35,7 @@
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Adilah Nazifah S</h1>
+      <h1 class="sitename">ahmad azarruddin</h1>
     </a>
 
     <div class="social-links text-center">

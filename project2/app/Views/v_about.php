@@ -22,17 +22,17 @@
                 <div class="row">
                 <div class="col-lg-6">
                     <ul>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>6 September 2004</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Instagram:</strong> <span>@zifaasl</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+62 852-1060-9076</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Depok, West Java</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>28 September 2005</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Instagram:</strong> <span>kaylejar</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+62 812-9267-5810</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>lamongan, East Java</span></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
                     <ul>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Information Systems (in progress)</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>difanazf06@gmail.com</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>will achieve a bachelor's degree in informatics engineering</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>ahmadazarruddin@gmial.com</span></li>
                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                     </ul>
                 </div>

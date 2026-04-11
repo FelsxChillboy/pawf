@@ -7,7 +7,9 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Feel free to contact me for discussions about technology, academic projects, or to order delicious culinary menus!</p>
+        <p>Feel free to get in touch with me for collaborations, project inquiries, or just to say hello. I’m always open to discussing new opportunities, creative ideas, or ways to be part of your vision.
+        You can reach me through the contact form below or via my social media and email. I’ll do my best to respond as soon as possible.
+        Let’s connect and create something great together!</p>
       </div><div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
@@ -19,21 +21,21 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Location</h3>
-                  <p>Depok, West Java, Indonesia</p>
+                  <p>DKI jakarta, West Java, Indonesia</p>
                 </div>
               </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call/WhatsApp</h3>
-                  <p>+62 852-1060-9076</p>
+                  <p>+62 812-9267-5810</p>
                 </div>
               </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email Me</h3>
-                  <p>difanazf06@gmail.com</p>
+                  <p>ahmadazarruddin@gmail.com</p>
                 </div>
-              </div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6565192839053!2d106.8119168!3d-6.4381403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e98ea2395397%3A0x4785dc4b042f7963!2sJl.%20KH.%20Abdurahman%2C%20Kec.%20Cipayung%2C%20Kota%20Depok%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1774960697581!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4431638961996!2d106.85056887440972!3d-6.205125860782921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5a75d490f1b%3A0x88ddc31195a1c7f!2sSekretariat%20Rayon%20PMII%20Teknik%20Unusia!5e0!3m2!1sen!2sid!4v1775881047785!5m2!1sen!2sid" width="600" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
