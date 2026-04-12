@@ -40,12 +40,12 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><div class="progress">
-              <span class="skill"><span>Business Process Analysis</span> <i class="val">90%</i></span>
+              <span class="skill"><span>API Development</span> <i class="val">65%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><div class="progress">
-              <span class="skill"><span>Project Management</span> <i class="val">85%</i></span>
+              <span class="skill"><span>Node.js</span> <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>

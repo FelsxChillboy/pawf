@@ -38,9 +38,9 @@
               <h5>Jan 2023 - Present</h5>
               <p><em>WFh</em></p>
               <ul>
-                <li>Conducted comprehensive observation and analysis of business processes at AHA Music Course.</li>
-                <li>Compiled the Student Introduction Program (PPM) report focusing on structural workflow evaluation.</li>
-                <li>Recommended information system improvements to enhance administrative efficiency.</li>
+                <li>Assisted in the development and maintenance of web applications using PHP and JavaScript.</li>
+                <li>Collaborated with team members to identify and resolve technical issues.</li>
+                <li>Participated in code reviews and contributed to improving code quality.</li>
               </ul>
             </div><div class="resume-item">
               <h4>Android App Developer (independent project)</h4>

@@ -40,8 +40,8 @@
 
     <div class="social-links text-center">
       <a href="https://x.com" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/adilahns.adilahns" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://instagram.com/zifaasl" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/kaylejar?igsh=bndkNXo3bnAzZjMw" class="instagram"><i class="bi bi-instagram"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
