@@ -13,9 +13,9 @@ class PostModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['title', 'content', 'status', 'author', 'slug']; // ← pindahkan ke sini
 
-    protected $allowEmptyInserts = ['title', 'content','status','author','slug'];
+    protected bool $allowEmptyInserts = false; // ← ubah jadi bool
     protected bool $updateOnlyChanged = true;
 
     protected array $casts = [];
