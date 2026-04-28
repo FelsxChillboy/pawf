@@ -47,6 +47,29 @@ active" aria-current="page" href="<?= base_url() ?>">Home</a>
                             href="<?= base_url('faqs') ?>">FAQ</a>
                     </li>
                 </ul>
+
+                <!-- Auth Buttons -->
+                <ul class="navbar-nav ms-auto">
+                    <?php if (session()->get('logged_in')) : ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                👤 <?= htmlspecialchars(session()->get('username')) ?>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="<?= base_url('auth/logout') ?>">Logout</a></li>
+                            </ul>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('login') ?>">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="<?= base_url('register') ?>">Daftar</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
             </div>
         </div>
     </nav>

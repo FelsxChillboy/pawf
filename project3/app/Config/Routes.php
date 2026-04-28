@@ -10,6 +10,17 @@ $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 
+// Authentication Routes
+$routes->get('/login', 'Auth::showLogin');
+$routes->post('/auth/login', 'Auth::doLogin');
+$routes->get('/register', 'Auth::showRegister');
+$routes->post('/auth/register', 'Auth::doRegister');
+$routes->get('/auth/logout', 'Auth::logout');
+
+// Dashboard
+$routes->get('/dashboard', 'Dashboard::index');
+
+// Posts & Comments
 $routes->get('/post', 'Post::index');
 $routes->post('/comment/store', 'Comment::store');
 $routes->get('/post/(:any)', 'Post::viewPost/$1');
