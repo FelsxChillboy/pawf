@@ -13,7 +13,7 @@ class PostModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title', 'content', 'status', 'author', 'slug']; // ← pindahkan ke sini
+    protected $allowedFields    = ['title', 'content', 'status', 'author', 'slug', 'category_id'];
 
     protected bool $allowEmptyInserts = false; // ← ubah jadi bool
     protected bool $updateOnlyChanged = true;
@@ -44,4 +44,44 @@ class PostModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    // Search method untuk mencari posts berdasarkan keyword
+    public function searchPosts($keyword)
+    {
+        return $this->where('status', 'published')
+                    ->groupStart()
+                    ->like('title', $keyword)
+                    ->orLike('content', $keyword)
+                    ->groupEnd()
+                    ->findAll();
+    }
+
+    // Get published posts with pagination
+    public function getPublishedWithPagination($perPage = 6)
+    {
+        return $this->where('status', 'published')
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate($perPage);
+    }
+
+    // Get posts by category with pagination
+    public function getByCategory($categoryId, $perPage = 6)
+    {
+        return $this->where('status', 'published')
+                    ->where('category_id', $categoryId)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate($perPage);
+    }
+
+    // Search posts with pagination
+    public function searchWithPagination($keyword, $perPage = 6)
+    {
+        return $this->where('status', 'published')
+                    ->groupStart()
+                    ->like('title', $keyword)
+                    ->orLike('content', $keyword)
+                    ->groupEnd()
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate($perPage);
+    }
 }

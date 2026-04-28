@@ -11,6 +11,7 @@ $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 
 $routes->get('/post', 'Post::index');
+$routes->post('/comment/store', 'Comment::store');
 $routes->get('/post/(:any)', 'Post::viewPost/$1');
 
 $routes->group('admin', function($routes){
