@@ -3,7 +3,8 @@
 <?= $this->section('content') ?>
 
 <!-- HERO SECTION -->
-<section class="hero-section bg-primary text-white py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<section class="hero-section bg-primary text-white py-5"
+    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8 mx-auto text-center">
@@ -13,9 +14,9 @@
                 </p>
                 <div class="d-flex gap-2 justify-content-center">
                     <a href="/post" class="btn btn-light btn-lg fw-bold">📖 Baca Artikel</a>
-                    <?php if (!session()->get('logged_in')) : ?>
+                    <?php if (!session()->get('logged_in')): ?>
                         <a href="/register" class="btn btn-outline-light btn-lg fw-bold">✍️ Daftar Sekarang</a>
-                    <?php else : ?>
+                    <?php else: ?>
                         <a href="/dashboard" class="btn btn-outline-light btn-lg fw-bold">🏠 Dashboard</a>
                     <?php endif; ?>
                 </div>
@@ -29,8 +30,8 @@
     <section class="mb-5">
         <h2 class="h3 mb-4">📚 Artikel Terbaru</h2>
         <div class="row">
-            <?php if (!empty($featuredPosts)) : ?>
-                <?php foreach ($featuredPosts as $post) : ?>
+            <?php if (!empty($featuredPosts)): ?>
+                <?php foreach ($featuredPosts as $post): ?>
                     <div class="col-md-4 mb-3">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
@@ -52,7 +53,7 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
-            <?php else : ?>
+            <?php else: ?>
                 <div class="col-12">
                     <p class="text-muted text-center">Belum ada artikel yang diterbitkan.</p>
                 </div>
@@ -69,21 +70,21 @@
     <section class="mb-5">
         <h2 class="h3 mb-4">📂 Kategori</h2>
         <div class="row">
-            <?php if (!empty($categories)) : ?>
-                <?php foreach ($categories as $category) : ?>
+            <?php if (!empty($categories)): ?>
+                <?php foreach ($categories as $category): ?>
                     <div class="col-md-3 mb-3">
                         <a href="/post?category=<?= $category['id'] ?>" class="card h-100 text-decoration-none category-card">
                             <div class="card-body text-center">
                                 <h5 class="card-title">
-                                    <?php 
-                                        // Icon based on category
-                                        $icons = [
-                                            'Technology' => '💻',
-                                            'Web Development' => '🌐',
-                                            'Database' => '🗄️',
-                                            'Design' => '🎨'
-                                        ];
-                                        echo isset($icons[$category['name']]) ? $icons[$category['name']] : '📌';
+                                    <?php
+                                    // Icon based on category
+                                    $icons = [
+                                        'Technology' => '💻',
+                                        'Web Development' => '🌐',
+                                        'Database' => '🗄️',
+                                        'Design' => '🎨'
+                                    ];
+                                    echo isset($icons[$category['name']]) ? $icons[$category['name']] : '📌';
                                     ?>
                                     <br>
                                     <?= htmlspecialchars($category['name']) ?>
@@ -101,7 +102,17 @@
 
     <hr class="my-5">
 
+    <!-- Flash Message -->
     <!-- NEWSLETTER SIGNUP -->
+    <?php if (session()->getFlashdata('success')): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= session()->getFlashdata('success') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <?php endif; ?>
+
+    <!-- NEWSLETTER SIGNUP -->
+    <section class="newsletter-section bg-light p-5 rounded"></section>
     <section class="newsletter-section bg-light p-5 rounded">
         <div class="row">
             <div class="col-md-8 mx-auto text-center">
@@ -111,8 +122,8 @@
                 </p>
                 <form method="POST" action="/newsletter/subscribe" class="d-flex gap-2">
                     <?= csrf_field() ?>
-                    <input type="email" name="email" class="form-control form-control-lg" 
-                           placeholder="Masukkan email Anda..." required>
+                    <input type="email" name="email" class="form-control form-control-lg"
+                        placeholder="Masukkan email Anda..." required>
                     <button type="submit" class="btn btn-primary btn-lg fw-bold">Subscribe</button>
                 </form>
                 <small class="text-muted d-block mt-2">Kami tidak akan spam email Anda ✉️</small>
@@ -130,12 +141,12 @@
     .category-card {
         transition: transform 0.3s, box-shadow 0.3s;
         border: none;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .category-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         color: #667eea;
     }
 

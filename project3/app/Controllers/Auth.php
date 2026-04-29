@@ -34,6 +34,7 @@ class Auth extends BaseController
     {
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
+        $rememberMe = $this->request->getPost('remember_me');
 
         // Validate
         if (!$email || !$password) {
@@ -53,12 +54,23 @@ class Auth extends BaseController
         }
 
         // Set session
-        session()->set([
+        $sessionData = [
             'logged_in' => true,
             'user_id' => $user['id'],
             'username' => $user['username'],
             'email' => $user['email'],
-        ]);
+        ];
+
+        // Handle remember me
+        if ($rememberMe) {
+            $token = $this->userModel->generateRememberToken($user['id']);
+            $sessionData['remember_token'] = $token;
+            
+            // Set cookie for 30 days
+            setcookie('remember_token', $token, time() + (30 * 24 * 60 * 60), '/');
+        }
+
+        session()->set($sessionData);
 
         return redirect()->to('/dashboard')->with('success', 'Selamat datang, ' . $user['username'] . '!');
     }
@@ -128,7 +140,13 @@ class Auth extends BaseController
      */
     public function logout()
     {
+        $userId = session()->get('user_id');
+        if ($userId) {
+            $this->userModel->clearRememberToken($userId);
+        }
+
         session()->destroy();
+        setcookie('remember_token', '', time() - 3600, '/');
         return redirect()->to('/')->with('success', 'Anda telah logout');
     }
 }

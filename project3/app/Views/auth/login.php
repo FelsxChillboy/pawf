@@ -35,6 +35,11 @@
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
 
+                        <div class="mb-3">
+                            <input type="checkbox" name="remember_me" id="remember_me">
+                            <label for="remember_me">Remember Me</label>
+                        </div>
+
                         <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
                     </form>
 

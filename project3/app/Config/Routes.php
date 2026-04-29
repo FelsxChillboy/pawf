@@ -25,6 +25,19 @@ $routes->get('/post', 'Post::index');
 $routes->post('/comment/store', 'Comment::store');
 $routes->get('/post/(:any)', 'Post::viewPost/$1');
 
+// Newsletter routes
+$routes->get('/newsletter', 'Newsletter::index');
+$routes->post('/newsletter/subscribe', 'Newsletter::subscribe');
+
+// Email verification routes
+$routes->get('/auth/verify-email/(:any)', 'Auth::verifyEmail/$1');
+
+// Password reset routes
+$routes->get('/auth/forgot-password', 'Auth::showForgotPassword');
+$routes->post('/auth/forgot-password', 'Auth::processForgotPassword');
+$routes->get('/auth/reset-password/(:any)', 'Auth::showResetPassword/$1');
+$routes->post('/auth/reset-password', 'Auth::processResetPassword');
+
 $routes->group('admin', function($routes){
 	$routes->get('post', 'PostAdmin::index', ['filter' => 'login']);
 	$routes->get('post/(:segment)/preview', 'PostAdmin::preview/$1');
