@@ -1,5 +1,4 @@
 <?= $this->extend('layouts/template') ?>
-
 <?= $this->section('content') ?>
 
 <!-- HERO SECTION -->
@@ -27,42 +26,63 @@
 
 <div class="container my-5">
     <!-- FEATURED POSTS -->
-    <section class="mb-5">
-        <h2 class="h3 mb-4">📚 Artikel Terbaru</h2>
-        <div class="row">
-            <?php if (!empty($featuredPosts)): ?>
-                <?php foreach ($featuredPosts as $post): ?>
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a href="/post/<?= $post['slug'] ?>" class="text-decoration-none">
-                                        <?= htmlspecialchars($post['title']) ?>
-                                    </a>
-                                </h5>
-                                <p class="card-text text-muted">
-                                    <?= substr($post['content'], 0, 80) ?>...
-                                </p>
-                                <small class="text-muted d-block mb-2">
-                                    <?= date('d M Y', strtotime($post['created_at'])) ?>
-                                </small>
-                                <a href="/post/<?= $post['slug'] ?>" class="btn btn-sm btn-outline-primary">
-                                    Baca Selengkapnya →
+<section class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 mb-0">📚 Artikel Terbaru</h2>
+        <?php if (session()->get('logged_in') && session()->get('role') === 'admin'): ?>
+            <a href="/admin/post/new" class="btn btn-success fw-bold">
+                ✏️ Tambah Artikel
+            </a>
+        <?php endif; ?>
+    </div>
+
+    <div class="row">
+        <?php if (!empty($featuredPosts)): ?>
+            <?php foreach ($featuredPosts as $post): ?>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/post/<?= $post['slug'] ?>" class="text-decoration-none">
+                                    <?= htmlspecialchars($post['title']) ?>
                                 </a>
+                            </h5>
+                            <p class="card-text text-muted">
+                                <?= substr($post['content'], 0, 80) ?>...
+                            </p>
+                            <small class="text-muted d-block mb-2">
+                                <?= date('d M Y', strtotime($post['created_at'])) ?>
+                            </small>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="/post/<?= $post['slug'] ?>" class="btn btn-sm btn-outline-primary">
+                                    Baca →
+                                </a>
+                                <?php if (session()->get('logged_in') && session()->get('role') === 'admin'): ?>
+                                    <a href="/admin/post/<?= $post['id'] ?>/edit" class="btn btn-sm btn-warning">
+                                        ✏️ Edit
+                                    </a>
+                                    <a href="/admin/post/<?= $post['id'] ?>/delete" 
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Yakin hapus artikel ini?')">
+                                        🗑️ Hapus
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="col-12">
-                    <p class="text-muted text-center">Belum ada artikel yang diterbitkan.</p>
                 </div>
-            <?php endif; ?>
-        </div>
-        <div class="text-center mt-4">
-            <a href="/post" class="btn btn-primary btn-lg">Lihat Semua Artikel (<?= $totalPosts ?> artikel) →</a>
-        </div>
-    </section>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="col-12">
+                <p class="text-muted text-center">Belum ada artikel yang diterbitkan.</p>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/post" class="btn btn-primary btn-lg">Lihat Semua Artikel (<?= $totalPosts ?> artikel) →</a>
+    </div>
+</section>
 
     <hr class="my-5">
 

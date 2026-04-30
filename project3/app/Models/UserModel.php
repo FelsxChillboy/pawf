@@ -13,7 +13,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['username', 'email', 'password', 'is_verified'];
+    protected $allowedFields = ['username', 'email', 'password', 'is_verified', 'role'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -134,4 +134,30 @@ class UserModel extends Model
     {
         return $this->where('email', $email)->first();
     }
+
+
+    /**
+ * Generate remember token
+ */
+public function generateRememberToken($userId)
+{
+    $token = bin2hex(random_bytes(32));
+    $this->update($userId, ['remember_token' => $token]);
+    return $token;
+}
+
+/**
+ * Clear remember token saat logout
+ */
+public function clearRememberToken($userId)
+{
+    // Kosongkan token - skip jika kolom belum ada
+    try {
+        $this->db->table('users')
+                 ->where('id', $userId)
+                 ->update(['remember_token' => null]);
+    } catch (\Exception $e) {
+        // Abaikan error jika kolom belum ada
+    }
+}
 }

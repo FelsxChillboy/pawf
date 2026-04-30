@@ -12,3 +12,12 @@ class Auth extends AuthConfig
      */
     public $requireActivation = null; // add this code
 }
+
+// Set session
+$sessionData = [
+    'logged_in' => true,
+    'user_id'   => $user['id'],
+    'username'  => $user['username'],
+    'email'     => $user['email'],
+    'role'      => $user['role'], 
+];

@@ -2,6 +2,8 @@
 
 use CodeIgniter\Router\RouteCollection;
 
+
+
 /**
  * @var RouteCollection $routes
  */
@@ -45,3 +47,14 @@ $routes->group('admin', function($routes){
 	$routes->add('post/(:segment)/edit', 'PostAdmin::edit/$1');
 	$routes->get('post/(:segment)/delete', 'PostAdmin::delete/$1');
 });
+
+// Article CRUD routes
+$routes->group('admin/article', ['filter' => 'login'], function($routes) {
+    $routes->get('/', 'ArticleAdmin::index'); // List articles
+    $routes->get('create', 'ArticleAdmin::create'); // Show create form
+    $routes->post('store', 'ArticleAdmin::store'); // Store new article
+    $routes->get('edit/(:segment)', 'ArticleAdmin::edit/$1'); // Show edit form
+    $routes->post('update/(:segment)', 'ArticleAdmin::update/$1'); // Update article
+    $routes->get('delete/(:segment)', 'ArticleAdmin::delete/$1'); // Delete article
+});
+
