@@ -48,11 +48,13 @@ $routes->group('admin', function($routes){
 	$routes->get('post/(:segment)/delete', 'PostAdmin::delete/$1');
 });
 
+// AddArticle route - Form untuk tambah artikel baru
+$routes->get('/admin/AddArticle', 'ArticleAdmin::create', ['filter' => 'login']);
+$routes->post('/admin/AddArticle', 'ArticleAdmin::store', ['filter' => 'login']);
+
 // Article CRUD routes
 $routes->group('admin/article', ['filter' => 'login'], function($routes) {
     $routes->get('/', 'ArticleAdmin::index'); // List articles
-    $routes->get('create', 'ArticleAdmin::create'); // Show create form
-    $routes->post('store', 'ArticleAdmin::store'); // Store new article
     $routes->get('edit/(:segment)', 'ArticleAdmin::edit/$1'); // Show edit form
     $routes->post('update/(:segment)', 'ArticleAdmin::update/$1'); // Update article
     $routes->get('delete/(:segment)', 'ArticleAdmin::delete/$1'); // Delete article

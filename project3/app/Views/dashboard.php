@@ -39,6 +39,12 @@
                         <a href="/post" class="list-group-item list-group-item-action">
                             📖 Baca Artikel
                         </a>
+                        <a href="/admin/article/" class="list-group-item list-group-item-action">
+                            📚 Admin Artikel
+                        </a>
+                        <a href="/admin/AddArticle" class="list-group-item list-group-item-action border-primary border-start border-4 bg-light">
+                            🧪 AddArticle
+                        </a>
                         <a href="/dashboard" class="list-group-item list-group-item-action active">
                             🏠 Dashboard
                         </a>
