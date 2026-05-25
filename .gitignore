@@ -1,0 +1,24 @@
+# CodeIgniter 4
+ci4-codeigniter/**/vendor/
+ci4-codeigniter/**/writable/
+ci4-codeigniter/**/.env
+ci4-codeigniter/**/builds/
+
+# Python / Django
+django/**/.venv/
+django/**/__pycache__/
+django/**/*.pyc
+django/**/*.pyo
+django/**/.DS_Store
+django/**/db.sqlite3
+django/**/media/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store

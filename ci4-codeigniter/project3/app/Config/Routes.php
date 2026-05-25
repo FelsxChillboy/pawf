@@ -1,0 +1,62 @@
+<?php
+
+use CodeIgniter\Router\RouteCollection;
+
+
+
+/**
+ * @var RouteCollection $routes
+ */
+$routes->get('/', 'Home::index');
+$routes->get('/about', 'Page::about');
+$routes->get('/contact', 'Page::contact');
+$routes->get('/faqs', 'Page::faqs');
+
+// Authentication Routes
+$routes->get('/login', 'Auth::showLogin');
+$routes->post('/auth/login', 'Auth::doLogin');
+$routes->get('/register', 'Auth::showRegister');
+$routes->post('/auth/register', 'Auth::doRegister');
+$routes->get('/auth/logout', 'Auth::logout');
+
+// Dashboard
+$routes->get('/dashboard', 'Dashboard::index');
+
+// Posts & Comments
+$routes->get('/post', 'Post::index');
+$routes->post('/comment/store', 'Comment::store');
+$routes->get('/post/(:any)', 'Post::viewPost/$1');
+
+// Newsletter routes
+$routes->get('/newsletter', 'Newsletter::index');
+$routes->post('/newsletter/subscribe', 'Newsletter::subscribe');
+
+// Email verification routes
+$routes->get('/auth/verify-email/(:any)', 'Auth::verifyEmail/$1');
+
+// Password reset routes
+$routes->get('/auth/forgot-password', 'Auth::showForgotPassword');
+$routes->post('/auth/forgot-password', 'Auth::processForgotPassword');
+$routes->get('/auth/reset-password/(:any)', 'Auth::showResetPassword/$1');
+$routes->post('/auth/reset-password', 'Auth::processResetPassword');
+
+$routes->group('admin', function($routes){
+	$routes->get('post', 'PostAdmin::index', ['filter' => 'login']);
+	$routes->get('post/(:segment)/preview', 'PostAdmin::preview/$1');
+	$routes->add('post/new', 'PostAdmin::create');
+	$routes->add('post/(:segment)/edit', 'PostAdmin::edit/$1');
+	$routes->get('post/(:segment)/delete', 'PostAdmin::delete/$1');
+});
+
+// AddArticle route - Form untuk tambah artikel baru
+$routes->get('/admin/AddArticle', 'ArticleAdmin::create', ['filter' => 'login']);
+$routes->post('/admin/AddArticle', 'ArticleAdmin::store', ['filter' => 'login']);
+
+// Article CRUD routes
+$routes->group('admin/article', ['filter' => 'login'], function($routes) {
+    $routes->get('/', 'ArticleAdmin::index'); // List articles
+    $routes->get('edit/(:segment)', 'ArticleAdmin::edit/$1'); // Show edit form
+    $routes->post('update/(:segment)', 'ArticleAdmin::update/$1'); // Update article
+    $routes->get('delete/(:segment)', 'ArticleAdmin::delete/$1'); // Delete article
+});
+
