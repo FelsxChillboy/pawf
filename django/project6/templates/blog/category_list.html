@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Kategori{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Kategori</h1>
+
+    {% if categories %}
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ category.nama }}</h5>
+                            {% if category.deskripsi %}
+                                <p class="card-text">{{ category.deskripsi }}</p>
+                            {% endif %}
+                            <a href="{% url 'category_posts' category.slug %}" class="btn btn-outline-primary">
+                                Lihat Postingan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">Belum ada kategori.</div>
+    {% endif %}
+{% endblock %}

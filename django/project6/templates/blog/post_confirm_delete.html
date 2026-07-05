@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Hapus Postingan{% endblock %}
+
+{% block content %}
+    <h1>Hapus Postingan</h1>
+    <p>Apakah Anda yakin ingin menghapus postingan <strong>"{{ post.judul }}"</strong>?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+        <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Batal</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if kategori %}{{ kategori.nama }} - {% endif %}Blog
+{% endblock %}
+
+{% block content %}
+    {% if kategori %}
+        <div class="mb-4">
+            <h2>Kategori: {{ kategori.nama }}</h2>
+            <p class="text-muted">{{ kategori.deskripsi }}</p>
+        </div>
+    {% else %}
+        <h1 class="mb-4">Semua Postingan</h1>
+    {% endif %}
+
+    {% if posts %}
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.judul }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                {{ post.kategori.nama }} &middot; {{ post.created_at|date:"d M Y" }}
+                            </h6>
+                            <p class="card-text">{{ post.konten|truncatewords:30 }}</p>
+                            <a href="{% url 'post_detail' post.slug %}" class="btn btn-outline-primary">Baca Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">Belum ada postingan.</div>
+    {% endif %}
+{% endblock %}
