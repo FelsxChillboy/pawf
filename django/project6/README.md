@@ -38,6 +38,21 @@ project6/
 └── static/css/style.css
 ```
 
+## WSGI & ASGI
+
+**WSGI** (Web Server Gateway Interface) — file `wsgi.py` berfungsi sebagai jembatan antara **web server** (Nginx, Apache, IIS) dengan aplikasi Django.
+
+Alur kerja WSGI:
+
+```
+Browser → Internet → Web Server → wsgi.py → Django → wsgi.py → Web Server → Browser
+```
+
+- **WSGI** digunakan saat **production** (deploy ke server nyata)
+- **Saat development** (`python manage.py runserver`), Django memakai server bawaan sehingga `wsgi.py` tidak digunakan
+
+**ASGI** (Asynchronous Server Gateway Interface) — file `asgi.py` adalah versi modern yang mendukung koneksi **asynchronous** seperti WebSocket dan real-time communication. WSGI cocok untuk request-response biasa (synchronous), sedangkan ASGI untuk aplikasi yang butuh koneksi real-time.
+
 ## Entity Relationship Diagram
 
 ```
