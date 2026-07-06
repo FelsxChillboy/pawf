@@ -19,7 +19,6 @@ project6/
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
-│   └── asgi.py
 ├── blog/                    # App utama
 │   ├── models.py            # Category & Post
 │   ├── views.py             # 7 Class-Based Views
@@ -38,7 +37,7 @@ project6/
 └── static/css/style.css
 ```
 
-## WSGI & ASGI
+## WSGI
 
 **WSGI** (Web Server Gateway Interface) — file `wsgi.py` berfungsi sebagai jembatan antara **web server** (Nginx, Apache, IIS) dengan aplikasi Django.
 
@@ -50,19 +49,6 @@ Browser → Internet → Web Server → wsgi.py → Django → wsgi.py → Web S
 
 - **WSGI** digunakan saat **production** (deploy ke server nyata)
 - **Saat development** (`python manage.py runserver`), Django memakai server bawaan sehingga `wsgi.py` tidak digunakan
-
-**ASGI** (Asynchronous Server Gateway Interface) — file `asgi.py` adalah versi modern dari WSGI yang mendukung koneksi **asynchronous** seperti WebSocket, server-sent events, dan real-time communication.
-
-Perbedaan utama:
-
-| Aspek | WSGI | ASGI |
-|-------|------|------|
-| Model | Synchronous | Synchronous & Asynchronous |
-| Koneksi | Request-Response biasa | Request-Response + WebSocket + HTTP/2 |
-| Cocok untuk | Web app standar | Real-time app, chat, notification |
-| File | `wsgi.py` | `asgi.py` |
-
-**WSGI** cocok untuk aplikasi request-response biasa (seperti blog ini). **ASGI** untuk aplikasi yang butuh komunikasi dua arah real-time seperti chat atau live notification.
 
 ## Entity Relationship Diagram
 
